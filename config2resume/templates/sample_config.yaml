@@ -1,0 +1,23 @@
+name: Prateek Tripathi
+title: Software Engineer
+contact:
+  email: prateektripathi23june2000@gmail.com
+  phone: +91 7905109067
+experience:
+  - company: JPMorgan&Chase
+    position: Software Engineer I
+    start_date: July 2022
+    end_date: Present
+    description: Worked on various projects...
+  - company: Yojak
+    position: Fullstack Developer Intern
+    start_date: Jan 2021
+    end_date: March 2021
+    description: Assisted in development...
+education:
+  - institution: IIT Roorkee
+    degree: B.Tech
+    branch: Metallurgical and Materials Engineering
+    start_date: 2018
+    end_date: 2022
+

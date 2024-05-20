@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "config2resume"
+version = "0.1.0"
+description = ""
+authors = ["Prateek Tripathi <ptripathi@mt.iitr.ac.in>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
