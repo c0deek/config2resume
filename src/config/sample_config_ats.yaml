@@ -1,0 +1,61 @@
+name: "First Last"
+contact:
+  email: "first.last@resumeworded.com"
+  phone: "+1 (123) 456789"
+  location: "San Francisco, CA"
+experience:
+  - company: "Resume Worded & Co."
+    role: "Financial Data Analyst, Business Development & Operations"
+    location: "San Francisco, CA"
+    start_date: "Oct 2017"
+    end_date: "Present"
+    details:
+      - "Managed cross-functional team of 10 in 3 locations (Palo Alto, Austin and New York), ranging from entry-level analysts to vice presidents, and collaborated with business development, data analysis, operations and marketing"
+      - "Launched Miami office with lead Director and recruited and managed new team of 10 employees; grew office revenue by 200% in first nine months (representing 20% of company revenue)"
+      - "Designed training and peer-mentoring programs for the incoming class of 25 analysts in 2017; reduced onboarding time for new hires by 50%"
+      - "Achieved $200K reduction in department overspend by establishing ROI metrics and budget controls to improve prioritisation of the $4MM department budget"
+  - company: "Instamake"
+    role: "Associate Product Manager"
+    location: "San Francisco, CA"
+    start_date: "Jun 2015"
+    end_date: "Oct 2017"
+    details:
+      - "Spearheaded a major pricing restructure by redirecting focus on consumer willingness to pay instead of product cost; implemented a three-tiered pricing model which increased average sale 35% and margin 12%"
+      - "Promoted within 12 months due to strong performance and organizational impact (1 year ahead of schedule)"
+      - "Identified steps to reduce return rates by 10% resulting in an eventual $75k cost savings"
+  - company: "Resume Worded & Co."
+    role: "Associate Product Manager"
+    location: "Austin, TX"
+    start_date: "Jun 2011"
+    end_date: "May 2013"
+    details:
+      - "Analyzed data from 25000 monthly active users and used outputs to guide marketing and product strategies; increased app engagement time by 2x, 30% decrease in drop off rate, and 3x shares on social media"
+      - "Drove redevelopment of internal tracking system in use by 125 employees, resulting in 20+ new features, reduction of 20% in save/load time and 15% operation time"
+education:
+  - institution: "Resume Worded Business School"
+    degree: "Master of Business Administration Candidate; Major in Business Analytics"
+    location: "Austin, TX"
+    graduation_date: "May 2015"
+    details:
+      - "Awards: Bill & Melinda Gates Fellow (only 5 awarded to class), Director’s List 2017 (top 10%)"
+      - "Leadership: Resume Worded Investment Club (Board Member), Consulting Club (Engagement Manager)"
+  - institution: "Resume Worded University"
+    degree: "Master of Business Administration Candidate; Major in Business Analytics"
+    location: "San Francisco, CA"
+    graduation_date: "May 2011"
+other:
+  technical_skills:
+    - "R"
+    - "Visual Basic"
+    - "Microsoft SQL Server"
+    - "Tableau"
+    - "SQL"
+    - "Financial Modeling"
+    - "Python"
+  certifications:
+    - "Certified Scrum Master"
+    - "Passed Resume Worded examinations"
+  languages:
+    - "English (native)"
+    - "Spanish (fluent)"
+    - "Chinese (intermediate)"

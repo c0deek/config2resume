@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+        .experience-item, .education-item {
+            margin-bottom: 10px;
+        }
+        .experience-item ul, .education-item ul {
+            list-style-type: disc;
+            margin: 5px 0 0 20px;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ name }}</h1>
+    </div>
+    <div class="contact-info">
+        <p>{{ contact.email }} | {{ contact.phone }} | {{ contact.location }}</p>
+    </div>
+    <div class="section">
+        <h2>EXPERIENCE</h2>
+        {% for job in experience %}
+        <div class="experience-item">
+            <p><strong>{{ job.company }}</strong></p>
+            <p>{{ job.role }} | {{ job.location }} | {{ job.start_date }} – {{ job.end_date }}</p>
+            <ul>
+                {% for detail in job.details %}
+                <li>{{ detail }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="section">
+        <h2>EDUCATION</h2>
+        {% for edu in education %}
+        <div class="education-item">
+            <p><strong>{{ edu.institution }}</strong></p>
+            <p>{{ edu.degree }} | {{ edu.location }} | {{ edu.graduation_date }}</p>
+            <ul>
+                {% for detail in edu.details %}
+                <li>{{ detail }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="section">
+        <h2>OTHER</h2>
+        <p><strong>Technical Skills:</strong> {{ other.technical_skills | join(', ') }}</p>
+        <p><strong>Certifications & Training:</strong> {{ other.certifications | join(', ') }}</p>
+        <p><strong>Languages:</strong> {{ other.languages | join(', ') }}</p>
+    </div>
+</body>
+</html>
