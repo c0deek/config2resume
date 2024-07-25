@@ -3,10 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <title>Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/georgia" rel="stylesheet">
     <style>
+        @page {
+            size: A4;
+            margin: 30px 50px 30px 50px;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Poppins', Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        h1 {
+            font-size: 26px;
+            font-weight: 500;
+            margin: 15px 0 8px 0;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        h3 {
+            font-size: 16px;
+            margin: 10px 0 5px 0;
+        }
+        h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #464646;
+            margin: 0 0 5px 0;
+        }
+        ul {
+            list-style-type: disc;
+            margin: 0;
+            padding: 0 0 0 8px;
+        }
+        p, li {
+            font-size: 11px;
+            margin: 0;
         }
         .header {
             text-align: center;
@@ -19,16 +56,34 @@
             margin-bottom: 20px;
         }
         .section h2 {
-            border-bottom: 1px solid #000;
+            border-bottom: 2px solid #000000;
             padding-bottom: 5px;
         }
-        .experience-item, .education-item {
-            margin-bottom: 10px;
+        .experience-item h3, .education-item h3 {
+            display: flex;
+            line-height: 1;
+            font-size: 15px;
+            font-weight: 700;
+            justify-content: space-between;
         }
-        .experience-item ul, .education-item ul {
-            list-style-type: disc;
-            margin: 5px 0 0 20px;
+        .experience-item p, .education-item p {
+            margin: 0;
             padding: 0;
+        }
+        .job-duration {
+            font-weight: 600;
+            font-size: 13px;
+        }
+        table, th, td {
+            border: 1px solid #2a2a2a;
+        }
+        table{
+            width: 100%;
+            margin-bottom: 5px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
         }
     </style>
 </head>
@@ -43,8 +98,8 @@
         <h2>EXPERIENCE</h2>
         {% for job in experience %}
         <div class="experience-item">
-            <p><strong>{{ job.company }}</strong></p>
-            <p>{{ job.role }} | {{ job.location }} | {{ job.start_date }} – {{ job.end_date }}</p>
+            <h3><span>{{ job.company }}</span><span class="job-duration">{{ job.start_date }} – {{ job.end_date }}</span></h3>
+            <h4>{{ job.role }} ( {{ job.location }} )</h4>
             <ul>
                 {% for detail in job.details %}
                 <li>{{ detail }}</li>
@@ -54,18 +109,44 @@
         {% endfor %}
     </div>
     <div class="section">
+        <h2>PROJECTS</h2>
+        <ul>
+            {% for project in projects %}
+            <li>{{ project.name }}<a href="{{ project.link }}"> {{ project.link_type }}</a></li>
+        {% endfor %}
+        </ul>
+    </ol>
+    <div class="section">
         <h2>EDUCATION</h2>
-        {% for edu in education %}
         <div class="education-item">
-            <p><strong>{{ edu.institution }}</strong></p>
-            <p>{{ edu.degree }} | {{ edu.location }} | {{ edu.graduation_date }}</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Degree</th>
+                        <th>Institute</th>
+                        <th>Board/Branch</th>
+                        <th>CGPA/Percentage</th>
+                    </tr>
+                </thead>
+                {% for edu in education.history %}
+                    <tbody>
+                        <tr>
+                            <td>{{ edu.graduation_year }}</td>
+                            <td>{{ edu.degree }}</td>
+                            <td>{{ edu.institution }}</td>
+                            <td>{{ edu.board if edu.board else edu.branch }}</td>
+                            <td>{{ edu.cgpa if edu.cgpa else edu.percentage }}</td>
+                        </tr>
+                    </tbody>
+                {% endfor %}
+            </table>
             <ul>
-                {% for detail in edu.details %}
-                <li>{{ detail }}</li>
+                {% for achievement in education.achievements %}
+                <li>{{ achievement }}</li>
                 {% endfor %}
             </ul>
         </div>
-        {% endfor %}
     </div>
     <div class="section">
         <h2>OTHER</h2>
